@@ -18,7 +18,7 @@ class Jopayter:
 		print(message)
 
 	# String execution line by line
-	def execution(self, program: [str]):
+	def execution(self, program: list[str]):
 		'''This is to execute the program from line by line'''
 		x = ""	
 		for i in program:
