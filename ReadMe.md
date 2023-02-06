@@ -1,4 +1,16 @@
 ### Jopayter
 #### MPOP Reverse II (Ryann Kim Sesgundo)
 ----
-> Please ignore this repository, I'm just bored and I the Jupyter comes to my mind, that's why I created something. This is just a test of doing it.
+> This is just my sample program, inspired by Jupyter Notebook. It is a program that uses the logic of Jupyter Notebook but in a method of Console
+---
+### Package used
+**JSON**
+```Bash
+pip install JSON
+```
+---
+### Disclaimer
+> This is just a part of my self exploration in python, I don't own the code or the logic.
+---
+### Credits
+1. W3schools (read and write in python and also JSON)
