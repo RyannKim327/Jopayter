@@ -1,6 +1,7 @@
 {
 	"code": [
 		"print('Hello World')",
-		"print('Hello', input('Enter something: '))"
+		"x = input('Enter something: ')",
+		"print('Hello', x)"
 	]
 }
