@@ -1,7 +1,7 @@
 import json
 
 class Jopayter:
-	def __init__(self, filename):
+	def __init__(self, filename: str):
 		'''This is to initiate the data (json file)'''
 		self.filename = filename
 
@@ -11,13 +11,14 @@ class Jopayter:
 		file = open(self.filename)
 		return json.loads(file.read())
 
-	def reWriteJson(self, data):
+	def reWriteJson(self, data, message = "New Data Added"):
 		'''This is to overwrite the data that the (json file) has'''
 		file = open(self.filename, "w")
-		file.write(data)
+		file.write(json.dumps(data))
+		print(message)
 
 	# String execution line by line
-	def execution(program):
+	def execution(self, program: [str]):
 		'''This is to execute the program from line by line'''
 		x = ""	
 		for i in program:

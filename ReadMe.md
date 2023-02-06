@@ -8,6 +8,7 @@
 ```Bash
 pip install JSON
 ```
+**os**
 ---
 ### Disclaimer
 > This is just a part of my self exploration in python, I don't own the code or the logic.

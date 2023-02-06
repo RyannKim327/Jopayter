@@ -1,7 +1,1 @@
-{
-	"code": [
-		"print('Hello World')",
-		"x = input('Enter something: ')",
-		"print('Hello', x)"
-	]
-}
+{"sample": ["x = input(\"Enter a number: \")", "try:", "    y = int(x)", "    print(type(y))", "except:", "    print(type(x))"]}
