@@ -4,22 +4,22 @@ from back import Jopayter
 # Execution of the code
 def execute():
 	jopay = Jopayter("index.json")
-	keys = jopay.jsonFile().keys()
-	file = jopay.jsonFile()
+	keys = jopay.getJSON().keys()
+	file = jopay.getJSON()
 	if len(keys) > 0:
 		print(keys)
 		key = input("Enter the key: ")
 		if file.get(key) == None:
 			print("Please check the spelling, or the cases, or might be not existed to the dictionary.")
 		else:
-			jopay.execution(file.get(key))
+			jopay.execCode(file.get(key))
 	else:
 		print("There is no code here")
 
 # Write a new code
 def write():
 	jopay = Jopayter("index.json")
-	file = jopay.jsonFile()
+	file = jopay.getJSON()
 	code = []
 	print("Please enter the code here, use line by line method, use 4 spaces as indentation:")
 	c = input("")
@@ -30,13 +30,13 @@ def write():
 			break
 	key = input("Enter the key name: ")
 	file.update({f"{key}": code})
-	jopay.reWriteJson(file)
+	jopay.addCode(file)
 
 def updateCode():
 	jopay = Jopayter("index.json")
-	print(jopay.jsonFile().keys())
+	print(jopay.getJSON().keys())
 	key = input("Enter the key to use: ")
-	jopay.editJSON(key)
+	jopay.editCode(key)
 
 # Main method starts here
 choice = 0
