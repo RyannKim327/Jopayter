@@ -44,8 +44,18 @@ choice = 0
 while choice != -1:
 	if os.system("cls"):
 		os.system("clear")
-	print("Welcome to my Jopayter, here are some of the lists that exists to this program:\n1. Execute a code\n2. Add new code\n3. Update a code\n4. Exit")
+	print("\033[33m")
+	print("+------------------------------------------------------------------------------+")
+	print("| Welcome to \033[32mJopayter\033[33m, here are some of the lists that exists to this program: |")
+	print("| 1. Execute a code                                                            |")
+	print("| 2. Add new code                                                              |")
+	print("| 3. Update a code                                                             |")
+	print("| 4. Exit                                                                      |")
+	print("+------------------------------------------------------------------------------+")
 	c = input("Enter a number of your choice: ")
+	print("\033[37m")
+	if os.system("cls"):
+		os.system("clear")
 	try:
 		choice = int(c)
 	except:
