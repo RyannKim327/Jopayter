@@ -1,1 +1,1 @@
-{"sample": ["x = input(\"Enter a number: \")", "try:", "    y = int(x)", "    print(type(y))", "except:", "    print(type(x))"]}
+{"sample": ["x = input(\"Enter a number: \")", "try:", "    y = int(x)", "    print(type(y))", "except:", "    print(type(x))"], "multiplication": ["x = input(\"Enter a number: \")", "try:", "    num = int(x)", "    for i in range(1, num + 1):", "        for j in range(1, num + 1):", "            print(i * j, end=\"\\t\")", "        print(\"\")", "except:", "    print(\"You not enter a number\")"], "tongah": ["print(\"Michael\")"]}

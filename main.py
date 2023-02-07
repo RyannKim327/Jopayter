@@ -32,13 +32,19 @@ def write():
 	file.update({f"{key}": code})
 	jopay.reWriteJson(file)
 
+def updateCode():
+	jopay = Jopayter("index.json")
+	print(jopay.jsonFile().keys())
+	key = input("Enter the key to use: ")
+	jopay.editJSON(key)
 
 # Main method starts here
 choice = 0
 
 while choice != -1:
-	os.system("cls")
-	print("Welcome to my Jopayter, here are some of the lists that exists to this program:\n1. Execute a code\n2. Add new code\n3. Exit")
+	if os.system("cls"):
+		os.system("clear")
+	print("Welcome to my Jopayter, here are some of the lists that exists to this program:\n1. Execute a code\n2. Add new code\n3. Update a code\n4. Exit")
 	c = input("Enter a number of your choice: ")
 	try:
 		choice = int(c)
@@ -52,6 +58,11 @@ while choice != -1:
 		write()
 		input("")
 	elif choice == 3:
+		updateCode()
+		input("")
+	elif choice == 4:
 		choice = -1
 		print("Thank you...")
-	os.system("cls")
+	
+	if os.system("cls"):
+		os.system("clear")
