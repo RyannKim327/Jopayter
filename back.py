@@ -22,16 +22,31 @@ class Jopayter:
 	def editCode(self, key, messge = "Data Modified", error = "Key was not existed"):
 		'''This is to modify the current version of the file'''
 		file = self.getJSON()
+		if key != "":
+			prog = file.get(key)
+			if prog == None:
+				print(error)
+			else:
+				for i in range(len(prog)):
+					x = input(f"{prog[i]}\n")
+					if x != "":
+						prog[i] = x
+				file.update({key: prog})
+				print(messge)
+				self.addCode(file)
+		else:
+			print("Invalid key")
+
+	# Deleting a code
+	def deleteCode(self, key, success = "Code deleted sucessfully", error = "Undefined Key"):
+		'''To delete a code existed to the file'''
+		file = self.getJSON()
 		prog = file.get(key)
 		if prog == None:
 			print(error)
 		else:
-			for i in range(len(prog)):
-				x = input(f"{prog[i]}\n")
-				if x != "":
-					prog[i] = x
-			file.update({key: prog})
-			print(messge)
+			file.pop(key)
+			print(success)
 			self.addCode(file)
 
 	# String execution line by line

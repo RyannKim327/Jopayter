@@ -38,6 +38,12 @@ def updateCode():
 	key = input("Enter the key to use: ")
 	jopay.editCode(key)
 
+def deleteCode():
+	jopay = Jopayter("index.json")
+	print(jopay.getJSON().keys())
+	key = input("Enter the key to use: ")
+	jopay.deleteCode(key)
+
 # Main method starts here
 choice = 0
 
@@ -50,7 +56,8 @@ while choice != -1:
 	print("| 1. Execute a code                                                            |")
 	print("| 2. Add new code                                                              |")
 	print("| 3. Update a code                                                             |")
-	print("| 4. Exit                                                                      |")
+	print("| 4. Delete a code                                                             |")
+	print("| 5. Exit                                                                      |")
 	print("+------------------------------------------------------------------------------+")
 	c = input("Enter a number of your choice: ")
 	print("\033[37m")
@@ -71,6 +78,9 @@ while choice != -1:
 		updateCode()
 		input("")
 	elif choice == 4:
+		deleteCode()
+		input("")
+	elif choice == 5:
 		choice = -1
 		print("Thank you...")
 	
