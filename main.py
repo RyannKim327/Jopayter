@@ -19,18 +19,7 @@ def execute():
 # Write a new code
 def write():
 	jopay = Jopayter("index.json")
-	file = jopay.getJSON()
-	code = []
-	print("Please enter the code here, use line by line method, use 4 spaces as indentation:")
-	c = input("")
-	while c != "":
-		code.append(f"{c}")
-		c = input("")
-		if c == "":
-			break
-	key = input("Enter the key name: ")
-	file.update({f"{key}": code})
-	jopay.addCode(file)
+	jopay.createCode()
 
 def updateCode():
 	jopay = Jopayter("index.json")
