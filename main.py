@@ -72,6 +72,7 @@ while choice != -1:
 	elif choice == 5:
 		choice = -1
 		print("Thank you...")
+		input("")
 	
 	if os.system("cls"):
 		os.system("clear")
