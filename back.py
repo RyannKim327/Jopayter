@@ -31,6 +31,10 @@ class Jopayter:
 					x = input(f"{prog[i]}\n")
 					if x != "":
 						prog[i] = x
+				x = input("")
+				while x != "":
+					prog.append(x)
+					x = input()
 				file.update({key: prog})
 				print(messge)
 				self.addCode(file)
