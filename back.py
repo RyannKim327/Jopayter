@@ -40,7 +40,7 @@ class Jopayter:
 					x = input(f"{j + 1}")
 				file.update({key: prog})
 				print(message)
-				self.addCode(file)
+				self.addCode(file, message=message)
 		else:
 			print("Invalid key")
 
@@ -74,13 +74,12 @@ class Jopayter:
 			print(error)
 		else:
 			file.pop(key)
-			print(success)
-			self.addCode(file)
+			self.addCode(file, message=success)
 
 	# String execution line by line
 	def execCode(self, program: list[str]):
 		'''This is to execute the program from array'''
-		x = ""	
+		x = ""
 		for i in program:
 			x += i + "\n"
 		exec(x)
