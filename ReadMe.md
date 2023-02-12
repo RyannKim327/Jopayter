@@ -10,6 +10,9 @@ pip install JSON
 ```
 **os**
 ---
+### How to use
+> Check out [here](howto.md)
+---
 ### Disclaimer
 > This is just a part of my self exploration in python, I don't own the code or the logic.
 ---

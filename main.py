@@ -1,5 +1,5 @@
 import os
-from back import Jopayter
+from jopayter import Jopayter
 
 # Execution of the code
 def execute():
