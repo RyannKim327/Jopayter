@@ -21,25 +21,31 @@ class Jopayter:
 	# Edit the code line by line
 	def editCode(self, key, message = "Data Modified", error = "Key was not existed"):
 		'''This is to modify the current version of the file'''
+		print("Use the keyword \"cls\" in all lowercase to remove the text in a specific line.")
 		file = self.getJSON()
 		if key != "":
 			prog = file.get(key)
 			if prog == None:
 				print(error)
 			else:
-				j = 0
+				j = 1
 				for i in range(len(prog)):
-					x = input(f"{i + 1}: {prog[i]}\n").replace("\t", "    ")
+					x = input(f"{j}: {prog[i]}\n").replace("\t", "    ")
 					if x != "":
-						prog[i] = x
-					j = i
-				x = input(f"{j + 1}: ").replace("\t", "    ")
-				while x != "":
-					prog.append(x)
+						if x == "cls":
+							prog[i] = ""
+						else:
+							prog[i] = x
 					j += 1
-					x = input(f"{j + 1}")
+				x = input(f"{j}: ").replace("\t", "    ")
+				while x != "":
+					if x == "cls":
+						prog.append("")
+					else:
+						prog.append(x)
+					j += 1
+					x = input(f"{j}")
 				file.update({key: prog})
-				print(message)
 				self.addCode(file, message=message)
 		else:
 			print("Invalid key")
@@ -75,6 +81,13 @@ class Jopayter:
 		else:
 			file.pop(key)
 			self.addCode(file, message=success)
+
+	def checkCode(self, key):
+		file = self.getJSON()
+		if file.get(key):
+			return file.get(key)
+		else:
+			return [ "Invalid key, or not found." ]
 
 	# String execution line by line
 	def execCode(self, program: list[str]):

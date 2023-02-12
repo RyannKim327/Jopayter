@@ -21,12 +21,24 @@ def write():
 	jopay = Jopayter("index.json")
 	jopay.createCode()
 
+# Update a code
 def updateCode():
 	jopay = Jopayter("index.json")
 	print(jopay.getJSON().keys())
 	key = input("Enter the key to use: ")
 	jopay.editCode(key)
 
+# Check a code
+def check():
+	jopay = Jopayter("index.json")
+	print(jopay.getJSON().keys())
+	key = input("Enter key: ")
+	print("---------------------------------")
+	for i in range(len(jopay.checkCode(key))):
+		print(f"{i + 1}: {jopay.checkCode(key)[i]}")
+	print("---------------------------------")
+
+# Delete a code
 def deleteCode():
 	jopay = Jopayter("index.json")
 	print(jopay.getJSON().keys())
@@ -44,9 +56,10 @@ while choice != -1:
 	print("| Welcome to \033[32mJopayter\033[33m, here are some of the lists that exists to this program: |")
 	print("| 1. Execute a code                                                            |")
 	print("| 2. Add new code                                                              |")
-	print("| 3. Update a code                                                             |")
-	print("| 4. Delete a code                                                             |")
-	print("| 5. Exit                                                                      |")
+	print("| 3. Check the code                                                            |")
+	print("| 4. Update a code                                                             |")
+	print("| 5. Delete a code                                                             |")
+	print("| 6. Exit                                                                      |")
 	print("+------------------------------------------------------------------------------+")
 	c = input("Enter a number of your choice: ")
 	print("\033[37m")
@@ -64,14 +77,17 @@ while choice != -1:
 		write()
 		input("")
 	elif choice == 3:
-		updateCode()
+		check()
 		input("")
 	elif choice == 4:
-		deleteCode()
+		updateCode()
 		input("")
 	elif choice == 5:
+		deleteCode()
+		input("")
+	elif choice == 6:
 		choice = -1
-		print("Thank you...")
+		print("Thank you...\nDeveloped by Ryann Kim Sesgundo")
 		input("")
 	
 	if os.system("cls"):
